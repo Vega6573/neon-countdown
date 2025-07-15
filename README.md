@@ -5,7 +5,7 @@ Retro countdown for stream
 You can use the live version of this countdown directly in your stream software.
 
 Live URL:
-[https://github.com/Vega6573/neon-countdown](https://github.com/Vega6573/neon-countdown/blob/main/Index.html)
+[[https://github.com/Vega6573/neon-countdown](https://github.com/Vega6573/neon-countdown/blob/main/Index.html)](https://github.com/Vega6573/neon-countdown)
 
 🎬 How to Embed in OBS or Streamlabs
 OBS Studio
