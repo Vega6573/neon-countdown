@@ -1,38 +1,56 @@
-
-/* Full-screen body reset */
-html, body {
+body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  width: 100%;
   height: 100%;
-  background-color: #020113;
+  background-color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
 }
 
-/* Synthwave grid + gradient background */
-.background {
-  position: absolute;
+/* Background grid */
+.overlay-background {
+  position: fixed;
   width: 100%;
   height: 100%;
   background:
-    linear-gradient(90deg, rgba(255,0,255,0.15) 1px, transparent 1px) 0 0 / 40px 40px,
-    linear-gradient(rgba(0,255,255,0.15) 1px, transparent 1px) 0 0 / 40px 40px,
-    radial-gradient(circle at bottom, #200022, #000000);
-  z-index: 1;
+    radial-gradient(ellipse at center, #200022 0%, #000000 100%),
+    repeating-linear-gradient(90deg, rgba(255,0,255,0.1) 0px, transparent 1px 40px),
+    repeating-linear-gradient(0deg, rgba(0,255,255,0.1) 0px, transparent 1px 40px);
+  z-index: 0;
 }
 
-/* Centered, glowing timer text */
-#timer {
+/* Glowing frame structure */
+.frame {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 60%;
   transform: translate(-50%, -50%);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12vw; /* Scales with canvas width */
+  text-align: center;
   color: #00ffff;
-  text-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #ff00ff,
-    0 0 30px #ff00ff;
-  z-index: 2;
+  z-index: 1;
 }
+
+/* Glowing timer text */
+#timer {
+  font-size: 10vw;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+}
+
+/* Decorative bars */
+.glow-bar {
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  box-shadow: 0 0 15px #ff00ff;
+  margin: 20px 0;
+}
+
+.glow-bar.top {
+  margin-top: -30px;
+}
+
+.glow-bar.bottom {
+  margin-bottom: -30px;
+}
+
