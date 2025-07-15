@@ -1,20 +1,25 @@
-let time = 5 * 60;
+// Total countdown seconds (5 minutes)
+let remaining = 5 * 60;
 const display = document.getElementById('timer');
 
-function format(sec) {
-  const min = String(Math.floor(sec / 60)).padStart(2, '0');
-  const seconds = String(sec % 60).padStart(2, '0');
-  return `${min}:${seconds}`;
+function formatTime(sec) {
+  const m = Math.floor(sec / 60).toString().padStart(2, '0');
+  const s = (sec % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
 }
 
-function countdown() {
-  display.textContent = format(time);
-  if (time > 0) {
-    time--;
-    setTimeout(countdown, 1000);
+function tick() {
+  display.textContent = formatTime(remaining);
+  
+  if (remaining > 0) {
+    remaining--;
+    // schedule next tick
+    setTimeout(tick, 1000);
   } else {
-    display.style.opacity = "0.4";
+    // Optional: flash or hide when done
+    display.style.opacity = '0.5';
   }
 }
 
-window.onload = countdown;
+// Start countdown on load
+window.onload = tick;
